@@ -1,6 +1,8 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, SafeAreaView } from "react-native";
 
+import colours from "../config/colours";
+
 const ViewImageScreen = () => {
   return (
     <View style={styles.mainView}>
@@ -45,10 +47,10 @@ const styles = StyleSheet.create({
     height: 44,
   },
   lhsButton: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: colours.primary,
   },
   rhsButton: {
-    backgroundColor: "#4ECDC4",
+    backgroundColor: colours.secondary,
   },
 });
 

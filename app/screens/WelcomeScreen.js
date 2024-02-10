@@ -11,6 +11,8 @@ import {
   Button,
 } from "react-native";
 
+import colours from "../config/colours";
+
 const image = require("../assets/background.jpg");
 
 const WelcomeScreen = () => {
@@ -69,12 +71,12 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
   },
   primaryButton: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: colours.primary,
     width: "100%",
     height: 44,
   },
   secondaryButton: {
-    backgroundColor: "#4ECDC4",
+    backgroundColor: colours.secondary,
     width: "100%",
     height: 44,
   },
