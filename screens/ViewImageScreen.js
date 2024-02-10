@@ -10,7 +10,7 @@ const ViewImageScreen = () => {
           <View style={[styles.topNavButton, styles.rhsButton]} />
         </View>
         <Image
-          resizeMode="cover"
+          resizeMode="contain"
           source={require("../assets/chair.jpg")}
           style={styles.mainImage}
         />
@@ -28,16 +28,14 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     width: "100%",
-    //backgroundColor: "yellow",
   },
   mainImage: {
-    height: "80%",
+    flex: -1,
     width: "100%",
   },
   buttonContainer: {
-    flex: 1,
+    flex: -1,
     flexDirection: "row",
-    //backgroundColor: "green",
     justifyContent: "space-between",
     paddingLeft: 16,
     paddingRight: 16,
