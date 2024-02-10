@@ -11,7 +11,7 @@ import {
   Button,
 } from "react-native";
 
-const image = require("./assets/background.jpg");
+const image = require("../assets/background.jpg");
 
 const WelcomeScreen = () => {
   return (
@@ -25,7 +25,7 @@ const WelcomeScreen = () => {
           <Image
             style={styles.logo}
             resizeMode="contain"
-            source={require("./assets/logo-red.png")}
+            source={require("../assets/logo-red.png")}
           />
           <Text style={styles.text}>Done With It</Text>
         </View>
