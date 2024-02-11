@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, SafeAreaView } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 import colours from "../config/colours";
 
@@ -8,7 +9,9 @@ const ViewImageScreen = () => {
     <View style={styles.mainView}>
       <SafeAreaView style={styles.container}>
         <View style={styles.buttonContainer}>
-          <View style={[styles.topNavButton, styles.lhsButton]} />
+          <View style={[styles.topNavButton, styles.lhsButton]}>
+            <Ionicons name="chevron-back" size={32} />
+          </View>
           <View style={[styles.topNavButton, styles.rhsButton]} />
         </View>
         <Image
@@ -45,6 +48,8 @@ const styles = StyleSheet.create({
   topNavButton: {
     width: 44,
     height: 44,
+    justifyContent: "center",
+    alignItems: "center",
   },
   lhsButton: {
     backgroundColor: colours.primary,
