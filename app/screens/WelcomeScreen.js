@@ -3,7 +3,6 @@ import {
   ImageBackground,
   StyleSheet,
   View,
-  Text,
   Image,
   Platform,
   StatusBar,
@@ -12,6 +11,7 @@ import {
 } from "react-native";
 
 import colours from "../config/colours";
+import AppText from "../components/AppText";
 
 const image = require("../assets/background.jpg");
 
@@ -29,7 +29,7 @@ const WelcomeScreen = () => {
             resizeMode="contain"
             source={require("../assets/logo-red.png")}
           />
-          <Text style={styles.text}>Done With It</Text>
+          <AppText style={styles.text}>Poo With It</AppText>
         </View>
         <View style={styles.primaryButton} />
         <View style={styles.secondaryButton} />
@@ -67,8 +67,9 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 18,
-    letterSpacing: 1.2,
+    textTransform: "uppercase",
+    fontWeight: "900",
+    color: "crimson",
   },
   primaryButton: {
     backgroundColor: colours.primary,
