@@ -7,11 +7,11 @@ import {
   Platform,
   StatusBar,
   SafeAreaView,
-  Button,
 } from "react-native";
 
 import colours from "../config/colours";
 import AppText from "../components/AppText";
+import AppButton from "../components/AppButton";
 
 const image = require("../assets/background.jpg");
 
@@ -29,10 +29,10 @@ const WelcomeScreen = () => {
             resizeMode="contain"
             source={require("../assets/logo-red.png")}
           />
-          <AppText style={styles.text}>Poo With It</AppText>
+          <AppText style={styles.text}>Done With It</AppText>
         </View>
-        <View style={styles.primaryButton} />
-        <View style={styles.secondaryButton} />
+        <AppButton buttonType="primary" />
+        <AppButton buttonType="secondary" />
       </SafeAreaView>
     </ImageBackground>
   );
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    width: "100%",
+    width: "70%",
     backgroundColor: "orange",
   },
   backgroundImage: {
@@ -70,16 +70,6 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontWeight: "900",
     color: "crimson",
-  },
-  primaryButton: {
-    backgroundColor: colours.primary,
-    width: "100%",
-    height: 44,
-  },
-  secondaryButton: {
-    backgroundColor: colours.secondary,
-    width: "100%",
-    height: 44,
   },
 });
 
