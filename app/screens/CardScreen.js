@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f4f4",
     width: "100%",
   },
-  container: {},
+  container: {
+    marginTop: 80,
+  },
 });
 
 export default CardScreen;
