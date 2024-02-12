@@ -6,5 +6,5 @@ import CardScreen from "./app/screens/CardScreen";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 
 export default function App() {
-  return <ListingDetailScreen />;
+  return <ViewImageScreen />;
 }

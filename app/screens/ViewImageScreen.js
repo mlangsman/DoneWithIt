@@ -10,9 +10,11 @@ const ViewImageScreen = () => {
       <SafeAreaView style={styles.container}>
         <View style={styles.buttonContainer}>
           <View style={[styles.topNavButton, styles.lhsButton]}>
-            <Ionicons name="chevron-back" size={32} />
+            <Ionicons style={styles.icon} name="close-outline" size={32} />
           </View>
-          <View style={[styles.topNavButton, styles.rhsButton]} />
+          <View style={[styles.topNavButton, styles.rhsButton]}>
+            <Ionicons style={styles.icon} name="trash-outline" size={32} />
+          </View>
         </View>
         <Image
           resizeMode="contain"
@@ -51,12 +53,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  lhsButton: {
-    backgroundColor: colours.primary,
+  icon: {
+    color: "white",
   },
-  rhsButton: {
-    backgroundColor: colours.secondary,
-  },
+  lhsButton: {},
+  rhsButton: {},
 });
 
 export default ViewImageScreen;
