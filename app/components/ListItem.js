@@ -3,10 +3,10 @@ import { StyleSheet, View, Image } from "react-native";
 
 import AppText from "./AppText";
 
-const ListItem = () => {
+const ListItem = ({ image }) => {
   return (
     <View style={styles.listItem}>
-      <Image style={styles.image} source={require("../assets/avatar.jpg")} />
+      <Image style={styles.image} source={image} />
       <View>
         <AppText style={styles.metaTitleText}>User Name</AppText>
         <AppText style={styles.metaSubtitleText}>5 Listings</AppText>
