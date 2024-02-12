@@ -12,6 +12,11 @@ const CardScreen = () => {
           subTitle="£100"
           image={require("../assets/jacket.jpg")}
         />
+        <Card
+          title="Jacket for sale"
+          subTitle="£100"
+          image={require("../assets/jacket.jpg")}
+        />
       </SafeAreaView>
     </View>
   );
