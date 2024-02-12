@@ -5,19 +5,21 @@ import Card from "../components/Card";
 
 const CardScreen = () => {
   return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <Card></Card>
+    <View style={styles.page}>
+      <SafeAreaView style={styles.container}>
+        <Card />
       </SafeAreaView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  page: {
     backgroundColor: "#f8f4f4",
+    width: "100%",
+    height: "100%",
   },
+  container: {},
 });
 
 export default CardScreen;
