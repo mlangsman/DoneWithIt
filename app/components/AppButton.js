@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontWeight: "500",
-    fontSize: 18,
+    fontWeight: "700",
+    fontSize: 16,
+    textTransform: "uppercase",
   },
 });
 

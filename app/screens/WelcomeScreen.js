@@ -31,8 +31,10 @@ const WelcomeScreen = () => {
           />
           <AppText style={styles.text}>Done With It</AppText>
         </View>
-        <AppButton buttonType="primary" />
-        <AppButton buttonType="secondary" />
+        <View style={styles.buttonContainer}>
+          <AppButton buttonType="primary" title="Login" />
+          <AppButton buttonType="secondary" title="Register" />
+        </View>
       </SafeAreaView>
     </ImageBackground>
   );
@@ -50,9 +52,12 @@ const styles = StyleSheet.create({
     top: "15%",
   },
   buttonContainer: {
-    flex: 1,
-    width: "70%",
-    backgroundColor: "orange",
+    flex: -1,
+    justifyContent: "center",
+    alignItems: "stretch",
+    width: "100%",
+    paddingHorizontal: 16,
+    rowGap: 16,
   },
   backgroundImage: {
     flex: 1,
