@@ -16,7 +16,11 @@ const ListingDetailScreen = () => {
       <View style={styles.content}>
         <AppText style={styles.titleText}>Jacket for sale</AppText>
         <AppText style={styles.subtitleText}>£100</AppText>
-        <ListItem image={require("../assets/avatar.jpg")} />
+        <ListItem
+          title="Peter Piper"
+          subtitle="5 Listings"
+          image={require("../assets/avatar.jpg")}
+        />
       </View>
     </View>
   );

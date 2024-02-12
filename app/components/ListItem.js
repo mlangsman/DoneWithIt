@@ -3,13 +3,13 @@ import { StyleSheet, View, Image } from "react-native";
 
 import AppText from "./AppText";
 
-const ListItem = ({ image }) => {
+const ListItem = ({ image, title = "Title", subtitle = "Subtitle" }) => {
   return (
     <View style={styles.listItem}>
       <Image style={styles.image} source={image} />
       <View>
-        <AppText style={styles.metaTitleText}>User Name</AppText>
-        <AppText style={styles.metaSubtitleText}>5 Listings</AppText>
+        <AppText style={styles.metaTitleText}>{title}</AppText>
+        <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
       </View>
     </View>
   );
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: null,
-    borderRadius: 1000,
+    borderRadius: 25,
     width: 50,
     height: 50,
   },
