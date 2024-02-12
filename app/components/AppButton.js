@@ -1,19 +1,26 @@
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import React, { Component } from "react";
 
 import colours from "../config/colours";
 import AppText from "./AppText";
 
-const AppButton = ({ title = "App Button", buttonType = "primary" }) => {
+const defaultAction = () => console.log("Pressed");
+
+const AppButton = ({
+  title = "App Button",
+  buttonType = "primary",
+  onPress = defaultAction,
+}) => {
   return (
-    <View
+    <TouchableOpacity
+      onPress={onPress}
       style={[
         styles.button,
         buttonType === "primary" ? styles.primary : styles.secondary,
       ]}
     >
       <AppText style={styles.text}>{title}</AppText>
-    </View>
+    </TouchableOpacity>
   );
 };
 
