@@ -2,6 +2,8 @@ import { Text, StyleSheet, View, Image } from "react-native";
 import React, { Component } from "react";
 import AppText from "./AppText";
 
+import colours from "../config/colours";
+
 export default class Card extends Component {
   render() {
     return (
@@ -12,8 +14,8 @@ export default class Card extends Component {
           resizeMode="cover"
         />
         <View style={styles.content}>
-          <AppText>Title</AppText>
-          <AppText>Price</AppText>
+          <AppText style={styles.headerText}>Title</AppText>
+          <AppText style={styles.priceText}>Price</AppText>
         </View>
       </View>
     );
@@ -35,6 +37,13 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 16,
-    rowGap: 8,
+    rowGap: 4,
+  },
+  headerText: {
+    fontWeight: "800",
+  },
+  priceText: {
+    fontWeight: "800",
+    color: colours.secondary,
   },
 });
