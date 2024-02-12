@@ -7,7 +7,11 @@ const CardScreen = () => {
   return (
     <View style={styles.page}>
       <SafeAreaView style={styles.container}>
-        <Card />
+        <Card
+          title="Jacket for sale"
+          subTitle="£100"
+          image={require("../assets/jacket.jpg")}
+        />
       </SafeAreaView>
     </View>
   );
