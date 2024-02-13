@@ -32,9 +32,12 @@ const MessagesScreen = (props) => {
             image={item.image}
             title={item.title}
             subtitle={item.description}
+            onPress={() => {
+              console.log(item);
+            }}
           />
         )}
-        ItemSeparatorComponent={() => <ListItemSeparator />}
+        ItemSeparatorComponent={ListItemSeparator}
       />
     </Screen>
   );

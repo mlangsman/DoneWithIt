@@ -1,18 +1,25 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
 
 import AppText from "./AppText";
 import colours from "../config/colours";
 
-const ListItem = ({ image, title = "Title", subtitle = "Subtitle" }) => {
+const ListItem = ({
+  image,
+  title = "Title",
+  subtitle = "Subtitle",
+  onPress,
+}) => {
   return (
-    <View style={styles.listItem}>
-      <Image style={styles.image} source={image} />
-      <View>
-        <AppText style={styles.metaTitleText}>{title}</AppText>
-        <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+    <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
+      <View style={styles.listItem}>
+        <Image style={styles.image} source={image} />
+        <View>
+          <AppText style={styles.metaTitleText}>{title}</AppText>
+          <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 const styles = StyleSheet.create({
@@ -21,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     columnGap: 16,
+    padding: 16,
   },
   image: {
     height: null,
