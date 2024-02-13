@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
-
 import AppText from "./AppText";
+import Swipeable from "react-native-gesture-handler/Swipeable";
+
 import colours from "../config/colours";
 
 const ListItem = ({
@@ -9,17 +10,20 @@ const ListItem = ({
   title = "Title",
   subtitle = "Subtitle",
   onPress,
+  renderRightActions,
 }) => {
   return (
-    <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
-      <View style={styles.listItem}>
-        <Image style={styles.image} source={image} />
-        <View>
-          <AppText style={styles.metaTitleText}>{title}</AppText>
-          <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+    <Swipeable renderRightActions={renderRightActions}>
+      <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
+        <View style={styles.listItem}>
+          <Image style={styles.image} source={image} />
+          <View>
+            <AppText style={styles.metaTitleText}>{title}</AppText>
+            <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+          </View>
         </View>
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>
+    </Swipeable>
   );
 };
 const styles = StyleSheet.create({

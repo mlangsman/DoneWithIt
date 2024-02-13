@@ -35,6 +35,9 @@ const MessagesScreen = (props) => {
             onPress={() => {
               console.log(item);
             }}
+            renderRightActions={() => (
+              <View style={{ backgroundColor: "red", width: 70 }} />
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
