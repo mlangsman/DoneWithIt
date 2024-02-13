@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 
 import AppText from "./AppText";
+import colours from "../config/colours";
 
 const ListItem = ({ image, title = "Title", subtitle = "Subtitle" }) => {
   return (
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   metaSubtitleText: {
-    color: "grey",
+    color: colours.medium,
   },
 });
 
