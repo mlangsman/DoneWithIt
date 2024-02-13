@@ -16,7 +16,6 @@ const ListItem = ({ image, title = "Title", subtitle = "Subtitle" }) => {
 };
 const styles = StyleSheet.create({
   listItem: {
-    marginTop: 32,
     flex: -1,
     flexDirection: "row",
     alignItems: "center",

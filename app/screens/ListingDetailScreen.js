@@ -16,11 +16,13 @@ const ListingDetailScreen = () => {
       <View style={styles.content}>
         <AppText style={styles.titleText}>Jacket for sale</AppText>
         <AppText style={styles.subtitleText}>£100</AppText>
-        <ListItem
-          title="Peter Piper"
-          subtitle="5 Listings"
-          image={require("../assets/avatar.jpg")}
-        />
+        <View style={styles.userContainer}>
+          <ListItem
+            title="Peter Piper"
+            subtitle="5 Listings"
+            image={require("../assets/avatar.jpg")}
+          />
+        </View>
       </View>
     </View>
   );
@@ -50,6 +52,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colours.secondary,
     fontWeight: "800",
+  },
+  userContainer: {
+    marginTop: 32,
   },
 });
 

@@ -4,7 +4,8 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import CardScreen from "./app/screens/CardScreen";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
-  return <ListingDetailScreen />;
+  return <MessagesScreen />;
 }
