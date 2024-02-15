@@ -6,16 +6,17 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 import colours from "../config/colours";
 
 const ListItem = ({
-  image,
+  image = require("../assets/avatar.jpg"),
   title = "Title",
   subtitle = "Subtitle",
   onPress,
   renderRightActions,
+  style,
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
-        <View style={styles.listItem}>
+        <View style={[styles.listItem, style]}>
           <Image style={styles.image} source={image} />
           <View>
             <AppText style={styles.metaTitleText}>{title}</AppText>

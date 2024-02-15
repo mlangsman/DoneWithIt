@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
-    marginTop: 80,
+    marginTop: 16,
   },
 });
 

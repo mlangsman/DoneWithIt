@@ -13,9 +13,13 @@ import colours from "../config/colours";
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
 
+import { useNavigation } from "@react-navigation/native";
+
 const image = require("../assets/background.jpg");
 
 const WelcomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <ImageBackground
       source={image}
@@ -32,7 +36,11 @@ const WelcomeScreen = () => {
           <AppText style={styles.text}>Done With It</AppText>
         </View>
         <View style={styles.buttonContainer}>
-          <AppButton buttonType="primary" title="Login" />
+          <AppButton
+            buttonType="primary"
+            title="Login"
+            onPress={() => navigation.navigate("TabScreen")}
+          />
           <AppButton buttonType="secondary" title="Register" />
         </View>
       </SafeAreaView>
