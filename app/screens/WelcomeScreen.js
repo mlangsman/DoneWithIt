@@ -39,7 +39,7 @@ const WelcomeScreen = () => {
           <AppButton
             buttonType="primary"
             title="Login"
-            onPress={() => navigation.navigate("TabScreen")}
+            onPress={() => navigation.navigate("AppNavigator")}
           />
           <AppButton buttonType="secondary" title="Register" />
         </View>

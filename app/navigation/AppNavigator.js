@@ -1,17 +1,14 @@
 import React from "react";
-import { View } from "react-native";
 
-import CardScreen from "./CardScreen";
-import MessagesScreen from "./MessagesScreen";
-import AccountScreen from "./AccountScreen";
+import CardScreen from "../screens/CardScreen";
+import MessagesScreen from "../screens/MessagesScreen";
+import AccountScreen from "../screens/AccountScreen";
 
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
-export default function TabScreen() {
+export default function AppNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={CardScreen} />
