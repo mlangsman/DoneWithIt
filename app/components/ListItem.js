@@ -1,23 +1,39 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import AppText from "./AppText";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { Ionicons } from "@expo/vector-icons";
 
 import colours from "../config/colours";
 
 const ListItem = ({
-  image = require("../assets/avatar.jpg"),
+  image = require("../assets/avatar2.jpg"),
   title = "Title",
   subtitle = "Subtitle",
   onPress,
   renderRightActions,
   style,
+  icon,
 }) => {
+  console.log(icon);
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
         <View style={[styles.listItem, style]}>
-          <Image style={styles.image} source={image} />
+          {!icon ? (
+            <Image style={styles.image} source={image} />
+          ) : (
+            <View style={styles.icon}>
+              <Ionicons name={icon} size={24} color={colours.white} />
+            </View>
+          )}
+
           <View>
             <AppText style={styles.metaTitleText}>{title}</AppText>
             <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
@@ -47,6 +63,15 @@ const styles = StyleSheet.create({
   },
   metaSubtitleText: {
     color: colours.medium,
+  },
+  icon: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: null,
+    borderRadius: 25,
+    width: 50,
+    height: 50,
+    backgroundColor: colours.primary,
   },
 });
 

@@ -15,7 +15,7 @@ import AppButton from "../components/AppButton";
 
 import { useNavigation } from "@react-navigation/native";
 
-const image = require("../assets/background.jpg");
+const image = require("../assets/background2.jpg");
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -28,12 +28,7 @@ const WelcomeScreen = () => {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
-          <Image
-            style={styles.logo}
-            resizeMode="contain"
-            source={require("../assets/logo-red.png")}
-          />
-          <AppText style={styles.text}>Done With It</AppText>
+          <AppText style={styles.text}></AppText>
         </View>
         <View style={styles.buttonContainer}>
           <AppButton
@@ -65,6 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     width: "100%",
     paddingHorizontal: 16,
+    paddingBottom: 0,
     rowGap: 16,
   },
   backgroundImage: {

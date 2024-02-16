@@ -8,14 +8,14 @@ const CardScreen = () => {
     <View style={styles.page}>
       <SafeAreaView style={styles.container}>
         <Card
-          title="Jacket for sale"
-          subTitle="£100"
-          image={require("../assets/jacket.jpg")}
+          title="Classic Account"
+          subTitle="£1,376"
+          image={require("../assets/bankcard.jpg")}
         />
         <Card
-          title="Jacket for sale"
-          subTitle="£100"
-          image={require("../assets/jacket.jpg")}
+          title="Mortgage"
+          subTitle="£100,000"
+          image={require("../assets/bankcard.jpg")}
         />
       </SafeAreaView>
     </View>
