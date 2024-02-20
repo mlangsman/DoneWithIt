@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator screenOptions={{ tabBarActiveTintColor: colours.primary }}>
-      <Tab.Screen name="Accounts" component={CardScreen} />
+      <Tab.Screen name="Home" component={CardScreen} />
       <Tab.Screen name="Messages" component={MessagesScreen} />
       <Tab.Screen name="Settings" component={AccountScreen} />
     </Tab.Navigator>

@@ -15,7 +15,7 @@ import AppButton from "../components/AppButton";
 
 import { useNavigation } from "@react-navigation/native";
 
-const image = require("../assets/background2.jpg");
+const image = require("../assets/background.jpg");
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
