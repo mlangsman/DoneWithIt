@@ -11,6 +11,7 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 import { Ionicons } from "@expo/vector-icons";
 
 import colours from "../config/colours";
+import Icon from "./Icon";
 
 const ListItem = ({
   image = require("../assets/avatar2.jpg"),
@@ -29,9 +30,7 @@ const ListItem = ({
           {!icon ? (
             <Image style={styles.image} source={image} />
           ) : (
-            <View style={styles.icon}>
-              <Ionicons name={icon} size={24} color={colours.white} />
-            </View>
+            <Icon name={icon} />
           )}
 
           <View>

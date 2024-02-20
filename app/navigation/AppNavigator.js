@@ -13,10 +13,17 @@ const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
   return (
-    <Tab.Navigator screenOptions={{ tabBarActiveTintColor: colours.primary }}>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: colours.primary,
+        headerTitleStyle: {
+          fontFamily: "Avenir",
+        },
+      }}
+    >
       <Tab.Screen name="Home" component={CardScreen} />
       <Tab.Screen name="Messages" component={MessagesScreen} />
-      <Tab.Screen name="Settings" component={AccountScreen} />
+      <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
   );
 }
