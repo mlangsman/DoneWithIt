@@ -6,26 +6,27 @@ import colours from "../config/colours";
 
 const Icon = ({
   name,
-  size = 24,
+  size = 50,
   backgroundColor = colours.primary,
   color = colours.white,
 }) => {
   return (
-    <View style={[styles.icon, { backgroundColor: backgroundColor }]}>
-      <Ionicons name={name} size={size} color={color} />
+    <View style={[styles(size).icon, { backgroundColor: backgroundColor }]}>
+      <Ionicons name={name} size={size / 2} color={color} />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  icon: {
-    justifyContent: "center",
-    alignItems: "center",
-    height: null,
-    borderRadius: 25,
-    width: 50,
-    height: 50,
-  },
-});
+const styles = (size) =>
+  StyleSheet.create({
+    icon: {
+      justifyContent: "center",
+      alignItems: "center",
+      height: null,
+      borderRadius: size / 2,
+      width: size,
+      height: size,
+    },
+  });
 
 export default Icon;
