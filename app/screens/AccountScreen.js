@@ -4,18 +4,16 @@ import React from "react";
 import Screen from "../components/Screen";
 import colours from "../config/colours";
 import ListItem from "../components/ListItem";
-import { Ionicons } from "@expo/vector-icons";
+import Icon from "../components/Icon";
 
 const menuItems = [
   {
-    id: 1,
     title: "Phone",
     subtitle: "0207 124 7654",
     icon: "call-outline",
     color: colours.secondary,
   },
   {
-    id: 2,
     title: "Address",
     subtitle: "72, Graceland Ave",
     icon: "home-outline",
@@ -23,25 +21,26 @@ const menuItems = [
   },
 ];
 
-const AccountScreen = () => {
+function AccountScreen(props) {
   return (
     <Screen style={styles.screen}>
       <ListItem
         title="Jane Bonjovi"
         subtitle="jane@bonjovi.com"
         style={styles.listItem}
+        image={require("../assets/avatar2.jpg")}
       />
 
       <View style={styles.sectionContainer}>
         <FlatList
           style={styles.section}
           data={menuItems}
-          keyExtractor={(menuItem) => menuItem.id.toString()}
+          keyExtractor={(menuItem) => menuItem.title}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
               subtitle={item.subtitle}
-              icon={item.icon}
+              IconComponent={<Icon name={item.icon} />}
               onPress={() => {
                 console.log(item);
               }}
@@ -51,7 +50,7 @@ const AccountScreen = () => {
       </View>
     </Screen>
   );
-};
+}
 
 const styles = StyleSheet.create({
   screen: {

@@ -11,21 +11,21 @@ const Icon = ({
   color = colours.white,
 }) => {
   return (
-    <View style={[styles(size).icon, { backgroundColor: backgroundColor }]}>
+    <View style={[styles(size, backgroundColor).icon]}>
       <Ionicons name={name} size={size / 2} color={color} />
     </View>
   );
 };
 
-const styles = (size) =>
+const styles = (size, backgroundColor) =>
   StyleSheet.create({
     icon: {
       justifyContent: "center",
       alignItems: "center",
-      height: null,
       borderRadius: size / 2,
       width: size,
       height: size,
+      backgroundColor: backgroundColor,
     },
   });
 

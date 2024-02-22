@@ -14,23 +14,22 @@ import colours from "../config/colours";
 import Icon from "./Icon";
 
 const ListItem = ({
-  image = require("../assets/avatar2.jpg"),
+  image,
   title = "Title",
   subtitle = "Subtitle",
   onPress,
   renderRightActions,
   style,
-  icon,
+  IconComponent,
 }) => {
-  console.log(icon);
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
         <View style={[styles.listItem, style]}>
-          {!icon ? (
-            <Image style={styles.image} source={image} />
+          {IconComponent ? ( // Check if IconComponent is provided
+            <View style={styles.icon}>{IconComponent}</View>
           ) : (
-            <Icon name={icon} />
+            image && <Image style={styles.image} source={image} /> // Render image if provided
           )}
 
           <View>
@@ -66,11 +65,6 @@ const styles = StyleSheet.create({
   icon: {
     justifyContent: "center",
     alignItems: "center",
-    height: null,
-    borderRadius: 25,
-    width: 50,
-    height: 50,
-    backgroundColor: colours.primary,
   },
 });
 
