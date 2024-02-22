@@ -51,6 +51,14 @@ function AccountScreen(props) {
           )}
         />
       </View>
+
+      <ListItem
+        title="Logout"
+        style={styles.listItem}
+        IconComponent={
+          <Icon name="log-out-outline" backgroundColor="#ffe66d" />
+        }
+      />
     </Screen>
   );
 }
