@@ -16,7 +16,7 @@ import Icon from "./Icon";
 const ListItem = ({
   image,
   title = "Title",
-  subtitle = "Subtitle",
+  subtitle,
   onPress,
   renderRightActions,
   style,
@@ -32,9 +32,11 @@ const ListItem = ({
             image && <Image style={styles.image} source={image} /> // Render image if provided
           )}
 
-          <View>
+          <View style={styles.metaContainer}>
             <AppText style={styles.metaTitleText}>{title}</AppText>
-            <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+            {subtitle && (
+              <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+            )}
           </View>
         </View>
       </TouchableHighlight>
@@ -65,6 +67,10 @@ const styles = StyleSheet.create({
   icon: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  metaContainer: {
+    flex: 1,
+    alignContent: "center",
   },
 });
 
