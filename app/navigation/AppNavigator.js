@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import CardScreen from "../screens/CardScreen";
+import ListingScreen from "../screens/ListingScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 import AccountScreen from "../screens/AccountScreen";
 
@@ -21,7 +21,7 @@ export default function AppNavigator() {
         },
       }}
     >
-      <Tab.Screen name="Home" component={CardScreen} />
+      <Tab.Screen name="Home" component={ListingScreen} />
       <Tab.Screen name="Messages" component={MessagesScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
