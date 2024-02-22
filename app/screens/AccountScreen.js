@@ -5,13 +5,14 @@ import Screen from "../components/Screen";
 import colours from "../config/colours";
 import ListItem from "../components/ListItem";
 import Icon from "../components/Icon";
+import ListItemSeparator from "../components/ListItemSeparator";
 
 const menuItems = [
   {
     title: "Phone",
     subtitle: "0207 124 7654",
     icon: "call-outline",
-    color: colours.secondary,
+    color: colours.primary,
   },
   {
     title: "Address",
@@ -33,14 +34,16 @@ function AccountScreen(props) {
 
       <View style={styles.sectionContainer}>
         <FlatList
-          style={styles.section}
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
               subtitle={item.subtitle}
-              IconComponent={<Icon name={item.icon} />}
+              IconComponent={
+                <Icon name={item.icon} backgroundColor={item.color} />
+              }
               onPress={() => {
                 console.log(item);
               }}
@@ -60,11 +63,9 @@ const styles = StyleSheet.create({
     backgroundColor: colours.white,
     marginTop: 16,
   },
-  section: {},
   sectionContainer: {
     marginTop: 16,
     flex: -1,
-    height: 200,
     backgroundColor: colours.white,
   },
 });
