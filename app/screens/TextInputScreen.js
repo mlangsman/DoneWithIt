@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import { React, useState } from "react";
-import Screen from "../components/Screen";
 
+import AppTextInput from "../components/AppTextInput";
+import Screen from "../components/Screen";
 import colours from "../config/colours";
 
 const TextInputScreen = () => {
@@ -9,9 +10,15 @@ const TextInputScreen = () => {
   console.log(firstName);
   return (
     <Screen style={styles.screen}>
-      <TextInput
-        style={styles.textInput}
-        placeholder="First name"
+      <AppTextInput
+        placeholder="Purchase Date"
+        icon="calendar-clear-outline"
+        clearButtonMode="always"
+        onChangeText={(text) => setFirstName(text)}
+      />
+      <AppTextInput
+        placeholder="Card number"
+        icon="card-outline"
         clearButtonMode="always"
         onChangeText={(text) => setFirstName(text)}
       />
@@ -24,6 +31,8 @@ export default TextInputScreen;
 const styles = StyleSheet.create({
   screen: {
     backgroundColor: colours.white,
+    paddingHorizontal: 16,
+    paddingTop: 32,
   },
   textInput: {
     borderBottomColor: colours.light,
