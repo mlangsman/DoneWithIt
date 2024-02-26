@@ -35,6 +35,12 @@ const styles = StyleSheet.create({
     paddingTop: 32,
   },
   textInput: {
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+    fontSize: 18,
+    flex: 1,
+    color: colours.dark,
+  },
+  textInput: {
     borderBottomColor: colours.light,
     padding: 16,
     borderBottomWidth: 1,

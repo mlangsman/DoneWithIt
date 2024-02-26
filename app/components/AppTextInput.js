@@ -2,8 +2,7 @@ import { View, Text, TextInput, StyleSheet, Platform } from "react-native";
 import React from "react";
 
 import { Ionicons } from "@expo/vector-icons";
-import Icon from "./Icon";
-import colours from "../config/colours";
+import defaultStyles from "../config/styles";
 
 const AppTextInput = ({ icon, ...otherProps }) => {
   return (
@@ -13,17 +12,20 @@ const AppTextInput = ({ icon, ...otherProps }) => {
           size={20}
           name={icon}
           style={styles.icon}
-          color={colours.medium}
+          color={defaultStyles.colours.medium}
         />
       )}
-      <TextInput style={styles.textInput} {...otherProps} />
+      <TextInput
+        style={[defaultStyles.text, styles.textInput]}
+        {...otherProps}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colours.light,
+    backgroundColor: defaultStyles.colours.light,
     borderRadius: 24,
     flexDirection: "row",
     width: "100%",
@@ -32,10 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textInput: {
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
-    fontSize: 18,
     flex: 1,
-    color: colours.dark,
   },
   icon: {
     paddingRight: 16,
