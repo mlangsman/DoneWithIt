@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, Switch } from "react-native";
 import { React, useState } from "react";
 
 import AppTextInput from "../components/AppTextInput";
@@ -6,8 +6,12 @@ import Screen from "../components/Screen";
 import colours from "../config/colours";
 
 const TextInputScreen = () => {
+  const [switchValue, setSwitchValue] = useState(true);
   const [firstName, setFirstName] = useState("");
+
   console.log(firstName);
+  console.log(switchValue);
+
   return (
     <Screen style={styles.screen}>
       <AppTextInput
@@ -22,6 +26,10 @@ const TextInputScreen = () => {
         clearButtonMode="always"
         onChangeText={(text) => setFirstName(text)}
       />
+      <Switch
+        value={switchValue}
+        onValueChange={(value) => setSwitchValue(value)}
+      />
     </Screen>
   );
 };
@@ -33,12 +41,6 @@ const styles = StyleSheet.create({
     backgroundColor: colours.white,
     paddingHorizontal: 16,
     paddingTop: 32,
-  },
-  textInput: {
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
-    fontSize: 18,
-    flex: 1,
-    color: colours.dark,
   },
   textInput: {
     borderBottomColor: colours.light,
