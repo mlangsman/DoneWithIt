@@ -4,6 +4,7 @@ import { React, useState } from "react";
 import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
 import colours from "../config/colours";
+import AppPicker from "../components/AppPicker";
 
 const TextInputScreen = () => {
   const [switchValue, setSwitchValue] = useState(true);
@@ -26,6 +27,7 @@ const TextInputScreen = () => {
         clearButtonMode="always"
         onChangeText={(text) => setFirstName(text)}
       />
+      <AppPicker icon="mail-outline" placeholder="Email" />
       <Switch
         value={switchValue}
         onValueChange={(value) => setSwitchValue(value)}
