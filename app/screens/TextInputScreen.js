@@ -6,9 +6,25 @@ import Screen from "../components/Screen";
 import colours from "../config/colours";
 import AppPicker from "../components/AppPicker";
 
+const categories = [
+  {
+    label: "Item 1",
+    value: 1,
+  },
+  {
+    label: "Item 2",
+    value: 2,
+  },
+  {
+    label: "Item 3",
+    value: 3,
+  },
+];
+
 const TextInputScreen = () => {
   const [switchValue, setSwitchValue] = useState(true);
   const [firstName, setFirstName] = useState("");
+  const [category, setCategory] = useState();
 
   console.log(firstName);
   console.log(switchValue);
@@ -27,7 +43,13 @@ const TextInputScreen = () => {
         clearButtonMode="always"
         onChangeText={(text) => setFirstName(text)}
       />
-      <AppPicker icon="mail-outline" placeholder="Email" />
+      <AppPicker
+        icon="mail-outline"
+        placeholder="Email"
+        items={categories}
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+      />
       <Switch
         value={switchValue}
         onValueChange={(value) => setSwitchValue(value)}

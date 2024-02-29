@@ -8,24 +8,31 @@ import {
   Button,
 } from "react-native";
 import React, { useState } from "react";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {
+  FlatList,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
 
 import { Ionicons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
 import Screen from "./Screen";
 import AppButton from "./AppButton";
+import PickerItem from "./PickerItem";
 
-const AppPicker = ({ icon, placeholder = "None", ...otherProps }) => {
-  const [pickerActive, setPickerActive] = useState(false);
-  const press = () => {
-    console.log(pickerActive);
-    setPickerActive(!pickerActive);
-  };
+const AppPicker = ({
+  icon,
+  items,
+  onSelectItem,
+  selectedItem,
+  placeholder = "None",
+  ...otherProps
+}) => {
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
-      <TouchableWithoutFeedback onPress={() => setPickerActive(true)}>
+      <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
         <View style={styles.container}>
           {icon && (
             <Ionicons
@@ -35,7 +42,9 @@ const AppPicker = ({ icon, placeholder = "None", ...otherProps }) => {
               color={defaultStyles.colours.medium}
             />
           )}
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           {icon && (
             <Ionicons
               size={20}
@@ -45,10 +54,22 @@ const AppPicker = ({ icon, placeholder = "None", ...otherProps }) => {
           )}
         </View>
       </TouchableWithoutFeedback>
-      <Modal visible={pickerActive} animationType="slide" onPress={press}>
+      <Modal visible={modalVisible} animationType="slide">
         <Screen style={styles.modal}>
-          <AppText>Blah</AppText>
-          <AppButton onPress={() => setPickerActive(false)} title="Close" />
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItem
+                label={item.label}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
+              />
+            )}
+          ></FlatList>
+          <AppButton onPress={() => setModalVisible(false)} title="Close" />
         </Screen>
       </Modal>
     </>
