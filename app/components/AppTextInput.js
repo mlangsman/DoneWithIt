@@ -1,5 +1,6 @@
 import { View, Text, TextInput, StyleSheet, Platform } from "react-native";
 import React from "react";
+import { Formik } from "formik";
 
 import { Ionicons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
