@@ -34,9 +34,13 @@ const WelcomeScreen = () => {
           <AppButton
             buttonType="primary"
             title="Login"
+            onPress={() => navigation.navigate("LoginScreen")}
+          />
+          <AppButton
+            buttonType="secondary"
+            title="Register"
             onPress={() => navigation.navigate("AppNavigator")}
           />
-          <AppButton buttonType="secondary" title="Register" />
         </View>
       </SafeAreaView>
     </ImageBackground>

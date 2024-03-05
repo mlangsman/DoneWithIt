@@ -1,5 +1,6 @@
 import React from "react";
 import WelcomeScreen from "../screens/WelcomeScreen";
+import LoginScreen from "../screens/LoginScreen";
 import AppNavigator from "./AppNavigator";
 
 import { createStackNavigator } from "@react-navigation/stack";
@@ -18,6 +19,11 @@ export default function AuthNavigator() {
         options={{ headerShown: false }}
         name="AppNavigator"
         component={AppNavigator}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="LoginScreen"
+        component={LoginScreen}
       />
     </Stack.Navigator>
   );
