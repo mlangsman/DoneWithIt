@@ -1,12 +1,4 @@
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  Platform,
-  Modal,
-  Button,
-} from "react-native";
+import { View, StyleSheet, Modal } from "react-native";
 import React, { useState } from "react";
 import {
   FlatList,
@@ -45,13 +37,11 @@ const AppPicker = ({
           <AppText style={styles.text}>
             {selectedItem ? selectedItem.label : placeholder}
           </AppText>
-          {icon && (
-            <Ionicons
-              size={20}
-              name="chevron-down-outline"
-              color={defaultStyles.colours.medium}
-            />
-          )}
+          <Ionicons
+            size={20}
+            name="chevron-down-outline"
+            color={defaultStyles.colours.medium}
+          />
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">

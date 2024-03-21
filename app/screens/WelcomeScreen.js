@@ -14,6 +14,7 @@ import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
 
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const image = require("../assets/background.jpg");
 
@@ -28,11 +29,13 @@ const WelcomeScreen = () => {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
-          <Image
-            style={styles.logo}
-            resizeMode="contain"
-            source={require("../assets/logo-red.png")}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate("AppNavigator")}>
+            <Image
+              style={styles.logo}
+              resizeMode="contain"
+              source={require("../assets/logo-red.png")}
+            />
+          </TouchableOpacity>
           <AppText style={styles.text}>Done With It</AppText>
         </View>
         <View style={styles.buttonContainer}>
