@@ -2,6 +2,7 @@ import React from "react";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import AppNavigator from "./AppNavigator";
+import RegisterUserScreen from "../screens/RegisterUserScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -24,6 +25,11 @@ export default function AuthNavigator() {
         options={{ headerShown: false }}
         name="LoginScreen"
         component={LoginScreen}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="RegisterUserScreen"
+        component={RegisterUserScreen}
       />
     </Stack.Navigator>
   );
