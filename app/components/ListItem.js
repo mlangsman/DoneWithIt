@@ -1,26 +1,42 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import AppText from "./AppText";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { Ionicons } from "@expo/vector-icons";
 
 import colours from "../config/colours";
+import Icon from "./Icon";
 
 const ListItem = ({
-  image = require("../assets/avatar.jpg"),
+  image,
   title = "Title",
-  subtitle = "Subtitle",
+  subtitle,
   onPress,
   renderRightActions,
   style,
+  IconComponent,
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colours.light}>
         <View style={[styles.listItem, style]}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {IconComponent ? ( // Check if IconComponent is provided
+            <View style={styles.icon}>{IconComponent}</View>
+          ) : (
+            image && <Image style={styles.image} source={image} /> // Render image if provided
+          )}
+
+          <View style={styles.metaContainer}>
             <AppText style={styles.metaTitleText}>{title}</AppText>
-            <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+            {subtitle && (
+              <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+            )}
           </View>
         </View>
       </TouchableHighlight>
@@ -47,6 +63,14 @@ const styles = StyleSheet.create({
   },
   metaSubtitleText: {
     color: colours.medium,
+  },
+  icon: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  metaContainer: {
+    flex: 1,
+    alignContent: "center",
   },
 });
 

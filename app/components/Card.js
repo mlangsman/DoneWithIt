@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    flexBasis: 200,
-    width: null,
+    width: "100%",
+    height: 200,
     flexDirection: "row",
   },
   content: {

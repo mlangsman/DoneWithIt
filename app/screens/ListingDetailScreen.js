@@ -20,7 +20,7 @@ const ListingDetailScreen = () => {
           <ListItem
             title="Peter Piper"
             subtitle="5 Listings"
-            image={require("../assets/avatar.jpg")}
+            image={require("../assets/avatar2.jpg")}
           />
         </View>
       </View>

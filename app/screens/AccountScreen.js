@@ -4,48 +4,64 @@ import React from "react";
 import Screen from "../components/Screen";
 import colours from "../config/colours";
 import ListItem from "../components/ListItem";
-import { Ionicons } from "@expo/vector-icons";
+import Icon from "../components/Icon";
+import ListItemSeparator from "../components/ListItemSeparator";
 
 const menuItems = [
   {
-    id: 1,
-    title: "My Listings",
-    icon: "trash-outline",
-    color: colours.secondary,
+    title: "Phone",
+    subtitle: "0207 124 7654",
+    icon: "call-outline",
+    color: colours.primary,
   },
   {
-    id: 2,
-    title: "My Messages",
-    icon: "email",
+    title: "Address",
+    subtitle: "72, Graceland Ave",
+    icon: "home-outline",
     color: colours.secondary,
   },
 ];
 
-const AccountScreen = () => {
+function AccountScreen(props) {
   return (
     <Screen style={styles.screen}>
       <ListItem
-        title="Jon Bonjovi"
-        subtitle="jon@bonjovi.com"
+        title="Jane Bonjovi"
+        subtitle="jane@bonjovi.com"
         style={styles.listItem}
+        image={require("../assets/avatar2.jpg")}
       />
 
-      <FlatList
-        style={styles.section}
-        data={menuItems}
-        keyExtractor={(menuItem) => menuItem.id.toString()}
-        renderItem={({ item }) => (
-          <ListItem
-            title={item.title}
-            onPress={() => {
-              console.log(item);
-            }}
-          />
-        )}
+      <View style={styles.sectionContainer}>
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItem) => menuItem.title}
+          ItemSeparatorComponent={ListItemSeparator}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              subtitle={item.subtitle}
+              IconComponent={
+                <Icon name={item.icon} backgroundColor={item.color} />
+              }
+              onPress={() => {
+                console.log(item);
+              }}
+            />
+          )}
+        />
+      </View>
+
+      <ListItem
+        title="Logout"
+        style={styles.listItem}
+        IconComponent={
+          <Icon name="log-out-outline" backgroundColor="#ffe66d" />
+        }
       />
     </Screen>
   );
-};
+}
 
 const styles = StyleSheet.create({
   screen: {
@@ -53,8 +69,11 @@ const styles = StyleSheet.create({
   },
   listItem: {
     backgroundColor: colours.white,
+    marginTop: 16,
   },
-  section: {
+  sectionContainer: {
+    marginTop: 16,
+    flex: -1,
     backgroundColor: colours.white,
   },
 });

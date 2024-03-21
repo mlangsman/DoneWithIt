@@ -12,13 +12,13 @@ const initialMessages = [
     id: 1,
     title: "Title",
     description: "Description",
-    image: require("../assets/avatar.jpg"),
+    image: require("../assets/avatar2.jpg"),
   },
   {
     id: 2,
     title: "Title",
     description: "Description",
-    image: require("../assets/avatar.jpg"),
+    image: require("../assets/avatar2.jpg"),
   },
 ];
 
@@ -31,7 +31,7 @@ const MessagesScreen = (props) => {
   };
 
   return (
-    <Screen>
+    <Screen style={styles.screen}>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
@@ -57,7 +57,7 @@ const MessagesScreen = (props) => {
               id: messages.length + 1,
               title: "Title",
               description: "Description",
-              image: require("../assets/avatar.jpg"),
+              image: require("../assets/avatar2.jpg"),
             },
           ]);
         }}
@@ -66,6 +66,10 @@ const MessagesScreen = (props) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: colours.white,
+  },
+});
 
 export default MessagesScreen;

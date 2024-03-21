@@ -39,9 +39,14 @@ const WelcomeScreen = () => {
           <AppButton
             buttonType="primary"
             title="Login"
-            onPress={() => navigation.navigate("AppNavigator")}
+            onPress={() => navigation.navigate("LoginScreen")}
           />
-          <AppButton buttonType="secondary" title="Register" />
+          <AppButton
+            buttonType="secondary"
+            title="Register"
+            //onPress={() => navigation.navigate("AppNavigator")}
+            onPress={() => navigation.navigate("RegisterUserScreen")}
+          />
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -65,7 +70,8 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     width: "100%",
     paddingHorizontal: 16,
-    rowGap: 16,
+    paddingBottom: 0,
+    rowGap: 0,
   },
   backgroundImage: {
     flex: 1,
