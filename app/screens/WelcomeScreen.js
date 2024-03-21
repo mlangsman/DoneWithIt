@@ -28,7 +28,12 @@ const WelcomeScreen = () => {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
-          <AppText style={styles.text}></AppText>
+          <Image
+            style={styles.logo}
+            resizeMode="contain"
+            source={require("../assets/logo-red.png")}
+          />
+          <AppText style={styles.text}>Done With It</AppText>
         </View>
         <View style={styles.buttonContainer}>
           <AppButton
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 16,
     paddingBottom: 0,
-    rowGap: 16,
+    rowGap: 0,
   },
   backgroundImage: {
     flex: 1,
