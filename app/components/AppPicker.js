@@ -34,7 +34,11 @@ const AppPicker = ({
               color={defaultStyles.colours.medium}
             />
           )}
-          <AppText style={styles.text}>
+          <AppText
+            style={
+              selectedItem ? styles.text : [styles.text, styles.placeholder]
+            }
+          >
             {selectedItem ? selectedItem.label : placeholder}
           </AppText>
           <Ionicons
@@ -91,6 +95,9 @@ const styles = StyleSheet.create({
     shadowOffset: -10,
     shadowColor: "lightgrey",
     shadowOpacity: 50,
+  },
+  placeholder: {
+    color: defaultStyles.colours.medium,
   },
 });
 

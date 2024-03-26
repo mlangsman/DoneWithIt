@@ -4,7 +4,7 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 
-const AppTextInput = ({ icon, ...otherProps }) => {
+const AppTextInput = ({ icon, style, ...otherProps }) => {
   return (
     <View style={styles.container}>
       {icon && (
@@ -16,7 +16,8 @@ const AppTextInput = ({ icon, ...otherProps }) => {
         />
       )}
       <TextInput
-        style={[defaultStyles.text, styles.textInput]}
+        placeholderTextColor={defaultStyles.colours.medium}
+        style={[defaultStyles.text, styles.textInput, style]}
         {...otherProps}
       />
     </View>
