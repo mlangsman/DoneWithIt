@@ -26,7 +26,6 @@ const ListingEditScreen = () => {
           autoCorrect={false}
           icon=""
           keyboardType="default"
-          textContentType="title"
           placeholder="Title"
         />
         <AppFormField
