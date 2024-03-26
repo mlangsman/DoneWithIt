@@ -15,7 +15,7 @@ export default function AuthNavigator() {
       <Stack.Screen
         options={{ headerShown: false }}
         name="Welcome"
-        component={ListingEditScreen}
+        component={WelcomeScreen}
       />
       <Stack.Screen
         options={{ headerShown: false }}

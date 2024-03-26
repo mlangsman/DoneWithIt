@@ -6,12 +6,12 @@ import {
   Text,
   TouchableHighlight,
 } from "react-native";
-import AppText from "./AppText";
+import AppText from "../AppText";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { Ionicons } from "@expo/vector-icons";
 
-import colours from "../config/colours";
-import Icon from "./Icon";
+import colours from "../../config/colours";
+import Icon from "../Icon";
 
 const ListItem = ({
   image,

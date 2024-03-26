@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
 import AppText from "../components/AppText";
 
 import colours from "../config/colours";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
 
 const ListingDetailScreen = () => {
   return (
