@@ -21,6 +21,7 @@ const ListItem = ({
   renderRightActions,
   style,
   IconComponent,
+  chevron = true,
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -38,6 +39,13 @@ const ListItem = ({
               <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
             )}
           </View>
+          {chevron && (
+            <Icon
+              name="chevron-forward"
+              backgroundColor={colours.white}
+              color={colours.medium}
+            />
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
