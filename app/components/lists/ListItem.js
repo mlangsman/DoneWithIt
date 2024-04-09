@@ -34,9 +34,13 @@ const ListItem = ({
           )}
 
           <View style={styles.metaContainer}>
-            <AppText style={styles.metaTitleText}>{title}</AppText>
+            <AppText style={styles.metaTitleText} numberOfLines={1}>
+              {title}
+            </AppText>
             {subtitle && (
-              <AppText style={styles.metaSubtitleText}>{subtitle}</AppText>
+              <AppText style={styles.metaSubtitleText} numberOfLines={3}>
+                {subtitle}
+              </AppText>
             )}
           </View>
           {showChevron && (
