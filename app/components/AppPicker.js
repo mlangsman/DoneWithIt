@@ -18,6 +18,7 @@ const AppPicker = ({
   onSelectItem,
   selectedItem,
   placeholder = "None",
+  width = "100%",
   ...otherProps
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -25,7 +26,7 @@ const AppPicker = ({
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <Ionicons
               size={20}
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colours.light,
     borderRadius: 24,
     flexDirection: "row",
-    width: "100%",
     padding: 16,
     marginVertical: 8,
     alignItems: "center",

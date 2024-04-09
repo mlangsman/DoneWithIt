@@ -36,6 +36,7 @@ const TextInputScreen = () => {
         icon="calendar-clear-outline"
         clearButtonMode="always"
         onChangeText={(text) => setFirstName(text)}
+        width="50%"
       />
       <AppTextInput
         placeholder="Card number"
@@ -49,6 +50,7 @@ const TextInputScreen = () => {
         items={categories}
         selectedItem={category}
         onSelectItem={(item) => setCategory(item)}
+        width="50%"
       />
       <Switch
         value={switchValue}
