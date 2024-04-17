@@ -5,19 +5,24 @@ import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
 import colours from "../config/colours";
 import AppPicker from "../components/AppPicker";
+import CategoryPickerItem from "../components/CategoryPickerItem";
+import PickerItem from "../components/PickerItem";
 
 const categories = [
   {
     label: "Item 1",
     value: 1,
+    icon: "call-outline",
   },
   {
     label: "Item 2",
     value: 2,
+    icon: "mail-outline",
   },
   {
     label: "Item 3",
     value: 3,
+    icon: "mail-outline",
   },
 ];
 
@@ -46,8 +51,10 @@ const TextInputScreen = () => {
       />
       <AppPicker
         icon="mail-outline"
-        placeholder="Email"
+        placeholder="Select item"
+        PickerItemComponent={CategoryPickerItem}
         items={categories}
+        numberOfColumns={3}
         selectedItem={category}
         onSelectItem={(item) => setCategory(item)}
         width="50%"
