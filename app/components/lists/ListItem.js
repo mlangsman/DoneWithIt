@@ -6,7 +6,7 @@ import {
   Text,
   TouchableHighlight,
 } from "react-native";
-import AppText from "../AppText";
+import AppText from "../Text";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { Ionicons } from "@expo/vector-icons";
 

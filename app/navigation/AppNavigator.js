@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 import ListingScreen from "../screens/ListingScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 import AccountScreen from "../screens/AccountScreen";
-import Screen from "../components/Screen";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 

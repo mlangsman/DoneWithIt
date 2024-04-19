@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
-import AppText from "../components/AppText";
+import AppText from "../components/Text";
 
 import colours from "../config/colours";
 import ListItem from "../components/lists/ListItem";

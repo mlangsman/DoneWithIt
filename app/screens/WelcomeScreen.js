@@ -10,8 +10,8 @@ import {
 } from "react-native";
 
 import colours from "../config/colours";
-import AppText from "../components/AppText";
-import AppButton from "../components/AppButton";
+import AppText from "../components/Text";
+import AppButton from "../components/Button";
 
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";

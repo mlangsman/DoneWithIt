@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Switch } from "react-native";
+import { StyleSheet, Switch } from "react-native";
 import { React, useState } from "react";
 
-import AppTextInput from "../components/AppTextInput";
+import AppTextInput from "../components/TextInput";
 import Screen from "../components/Screen";
 import colours from "../config/colours";
-import AppPicker from "../components/AppPicker";
+import AppPicker from "../components/Picker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
-import PickerItem from "../components/PickerItem";
 
 const categories = [
   {

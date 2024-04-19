@@ -2,7 +2,7 @@ import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import React, { Component } from "react";
 
 import colours from "../config/colours";
-import AppText from "./AppText";
+import AppText from "./Text";
 
 const defaultAction = () => console.log("Pressed");
 

@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 import ListItem from "../components/lists/ListItem";
 import Screen from "../components/Screen";
